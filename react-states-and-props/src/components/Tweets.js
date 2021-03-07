@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Tweets = () => (
+const Tweets = (props) => (
         <div>
         <section>
             <h1>
-                Tweets
+                {props.me}
             </h1>
+            <Tweet/>
             </section>      
         </div>
     );
