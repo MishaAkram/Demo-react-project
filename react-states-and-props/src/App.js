@@ -4,7 +4,9 @@ import './App.css';
 import Tweets from './components/Tweets';
 
 function App() {
-  const name="developedmyMisha";
+  const tweets=[{name:"Misha",tweet:"Raect ughh"},
+                {name:'traversy media',tweet:"whats up guys!"},
+                {name:'weddevsimplified',tweet:"hey guys im simplified the web"}]
   return (
     <div className="App">
       <div className="home">
