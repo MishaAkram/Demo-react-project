@@ -1,22 +1,20 @@
 import React from "react";
-import { connect ,useSelector} from "react-redux";
-import { toggleSwitch } from "./UiReducer";
+import {useSelector, useDispatch } from "react-redux";
+import { TOGGLE } from "./UiReducer";
 
-const Toggle = ({toggleSwitch }) => {
+const Toggle = () => {
     const ui = useSelector(state => state.ui)
-  return(
-  <div>
-        <div>{JSON.stringify(ui)}</div>
-        <input
-            type="checkbox"
-            value={ui.toggle}
-            onChange={toggleSwitch}
-        />
-    </div>
-);
+    const dispatch = useDispatch();
+    return (
+        <div>
+            <div>{JSON.stringify(ui)}</div>
+            <input
+                type="checkbox"
+                value={ui.toggle}
+                onChange={() => dispatch({ type: TOGGLE })}
+            />
+        </div>
+    );
 }
 
-export default connect(
-    null,
-    { toggleSwitch }
-)(Toggle);
+export default Toggle;
