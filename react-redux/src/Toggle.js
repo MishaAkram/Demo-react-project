@@ -1,9 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
+import { connect ,useSelector} from "react-redux";
 import { toggleSwitch } from "./UiReducer";
 
-const Toggle = ({ ui, toggleSwitch }) => (
-    <div>
+const Toggle = ({toggleSwitch }) => {
+    const ui = useSelector(state => state.ui)
+  return(
+  <div>
         <div>{JSON.stringify(ui)}</div>
         <input
             type="checkbox"
@@ -12,14 +14,9 @@ const Toggle = ({ ui, toggleSwitch }) => (
         />
     </div>
 );
-
-
-
-const mapStateToProps = ({ ui }) => ({
-    ui
-});
+}
 
 export default connect(
-    mapStateToProps,
+    null,
     { toggleSwitch }
 )(Toggle);
